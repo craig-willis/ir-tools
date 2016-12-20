@@ -485,5 +485,10 @@ public class IndexWrapperIndriImpl implements IndexWrapper{
     		System.err.println(e.getStackTrace());
     	}
     }
+    
+    public String getDocNo(int docid) {
+        IndriDocument doc = new IndriDocument(index);
+        return doc.getDocno(docid);
+    }
 
 }

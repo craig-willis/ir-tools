@@ -94,4 +94,5 @@ public interface IndexWrapper {
      */
     public String toDMQuery(String query, String type, double w1, double w2, double w3);
     
+    public String getDocNo(int docid);
 }

@@ -856,5 +856,17 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
    {
        return null;
    }
+   
+   public String getDocNo(int docid) {
+       String docno = null;
+       try {
+           Document doc = index.document(docid);
+           docno = doc.get(Indexer.FIELD_DOCNO);
+
+       } catch (Exception e) {
+           logger.log(Level.SEVERE, e.getMessage(), e);
+       }
+       return docno;
+   }
 
 }
