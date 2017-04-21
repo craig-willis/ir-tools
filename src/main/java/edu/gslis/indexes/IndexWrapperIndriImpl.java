@@ -490,5 +490,9 @@ public class IndexWrapperIndriImpl implements IndexWrapper{
         IndriDocument doc = new IndriDocument(index);
         return doc.getDocno(docid);
     }
+    
+    public Map<Integer, Integer> getDocsByTerm(String term) {
+        return getDocsByTerm(term, null);
+    }
 
 }
