@@ -21,10 +21,12 @@ public class Stopper {
 			stopwords = new HashSet<String>();
 			
 			// assume our stoplist has one stopword per line
-			List<String> lines = IOUtils.readLines(new FileInputStream(pathToStoplist));
-			Iterator<String> it = lines.iterator();
-			while(it.hasNext()) {
-				stopwords.add(it.next());
+			if (!pathToStoplist.isEmpty()) {
+				List<String> lines = IOUtils.readLines(new FileInputStream(pathToStoplist));
+				Iterator<String> it = lines.iterator();
+				while(it.hasNext()) {
+					stopwords.add(it.next());
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
