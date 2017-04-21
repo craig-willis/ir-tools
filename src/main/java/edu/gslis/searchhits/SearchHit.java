@@ -24,6 +24,14 @@ public class SearchHit implements Scorable, Comparable<SearchHit> {
 		docVector = new FeatureVector(null);
 	}
 	
+	public SearchHit(SearchHit hit) {
+		this.queryName = hit.getQueryName();
+		this.docno = hit.getDocno();
+		this.docID = hit.getDocID();
+		this.score = hit.getScore();
+		this.length = hit.getLength();
+		this.docVector = hit.getFeatureVector().deepCopy();
+	}
 	
 	public Object getMetadataValue(String property) {
 		if(!metadata.containsKey(property)) {

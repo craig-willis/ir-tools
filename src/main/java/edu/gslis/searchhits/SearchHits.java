@@ -1,5 +1,6 @@
 package edu.gslis.searchhits;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -23,9 +24,8 @@ public class SearchHits {
 		hits = new LinkedList<SearchHit>();	
 		
 	}
-	
 	public SearchHits(List<SearchHit> hits) {
-		this.hits = hits;
+		this.hits = new ArrayList<SearchHit>(hits);
 	}
 	
 	public void add(SearchHit hit) {
