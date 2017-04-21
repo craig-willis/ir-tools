@@ -26,6 +26,12 @@ public class GQuery {
 	public GQuery() {
 		metadata = new HashMap<String,String>();
 	}
+	
+	public GQuery(GQuery q) {
+		this.name = q.getTitle();
+		this.text = q.getText();
+		this.featureVector = q.getFeatureVector().deepCopy();		
+	}
 	public String getTitle() {
 		return name;
 	}
