@@ -790,6 +790,10 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 
    }
    
+   public Map<Integer, Integer> getDocsByTerm(String term) {
+       return getDocsByTerm(term, null);
+   }
+   
    public Map<Integer, Integer> getDocsByTerm(String term, Set<Integer> docids) {
        Map<Integer, Integer> df = new HashMap<Integer, Integer>();
        try
