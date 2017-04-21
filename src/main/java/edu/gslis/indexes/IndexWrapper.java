@@ -69,6 +69,8 @@ public interface IndexWrapper {
 	 */
 	public Map<Integer, Integer> getDocsByTerm (String term, Set<Integer> docs);
 	
+	public Map<Integer, Integer> getDocsByTerm (String term);
+	
 	/**
 	 * Returns a boolean query for the specified GQuery
 	 * @param query
