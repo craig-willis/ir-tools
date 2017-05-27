@@ -21,7 +21,7 @@ import org.apache.commons.io.IOUtils;
  */
 public class Qrels {
 
-	public static final Pattern SPACE_PATTERN = Pattern.compile(" ", Pattern.DOTALL);
+	public static final Pattern SPACE_PATTERN = Pattern.compile("\\s+", Pattern.DOTALL);
 
 	// remember.  this is an assumption of format based on TREC qrels.
 	private static final int QUERY_COLUMN = 0;
@@ -77,7 +77,7 @@ public class Qrels {
 				String line = linesIt.next();
 				String[] toks = SPACE_PATTERN.split(line);
 				if(toks==null || toks.length != 4) {
-					System.err.println("bad qrels line: " + line + ":");
+					System.err.println("bad qrels line: " + line + ":" + toks.length);
 					continue;
 				}
 				String query = toks[QUERY_COLUMN];
