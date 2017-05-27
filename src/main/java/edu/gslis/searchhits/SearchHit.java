@@ -36,7 +36,7 @@ public class SearchHit implements Scorable, Comparable<SearchHit> {
 	public Object getMetadataValue(String property) {
 		if(!metadata.containsKey(property)) {
 			System.err.println("requested non-existent metadata " + property + " from doc " + docno);
-			System.exit(-1); 
+			//System.exit(-1); 
 		} 
 		return metadata.get(property);
 	}
