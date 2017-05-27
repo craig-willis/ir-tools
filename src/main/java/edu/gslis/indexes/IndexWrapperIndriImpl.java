@@ -92,6 +92,7 @@ public class IndexWrapperIndriImpl implements IndexWrapper{
             double[] times = null;
             String[] docnos = null;
 			synchronized(this) {
+				index.setScoringRules(new String[] {scoringRule});
 				res = index.runQuery(queryString.toString(), count);
 				docnos = index.documentMetadata(res, "docno");
 				String[] timeStrings  = null;
@@ -177,7 +178,7 @@ public class IndexWrapperIndriImpl implements IndexWrapper{
 	}
 	
 	public void setTimeFieldName(String timeFieldName) {
-		System.err.println("setting time to " + timeFieldName);
+		//System.err.println("setting time to " + timeFieldName);
 		this.timeFieldName = timeFieldName;
 	}
 

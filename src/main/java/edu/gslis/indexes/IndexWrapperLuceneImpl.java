@@ -135,6 +135,10 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
         return runQuery(queryString, count);
     }
     
+    
+    public SearchHits runQuery(GQuery gquery, int count, String rule) {
+    	return runQuery(gquery, count);    	
+    }
     /**
 	 * Execute a query given a GQuery object and set of fields
 	 * @param gquery GQuery object
